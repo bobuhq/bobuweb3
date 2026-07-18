@@ -54,9 +54,14 @@ const heroVideo=document.getElementById('heroVideo');
 const soundToggle=document.getElementById('soundToggle');
 
 if(heroVideo){
-  heroVideo.play().catch(()=>{});
+  const startHeroVideo=()=>heroVideo.play().catch(()=>{});
+  startHeroVideo();
+  document.addEventListener('visibilitychange',()=>{
+    if(!document.hidden && heroVideo.paused) startHeroVideo();
+  });
   heroVideo.addEventListener('error',()=>{
     heroVideo.style.display='none';
+    if(soundToggle) soundToggle.style.display='none';
   });
 }
 if(heroVideo && soundToggle){

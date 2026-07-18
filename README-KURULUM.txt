@@ -1,8 +1,11 @@
-BOBU WEB3 V2 — VIDEO UPDATE
+BOBU WEB3 V2 — VIDEO LAYER FIX
 
-Bu güncelleme bobu-space.mp4 dosyasını tam ekran hero arka plan videosu olarak kullanır.
+Düzeltme:
+- Video artık poster görselinin önünde görünür.
+- hero-poster.png yalnızca video yüklenemezse yedek arka plan olarak kalır.
+- Mobil ve masaüstünde autoplay, muted, loop ve playsinline aktiftir.
 
-GitHub ana dizininde mutlaka şunlar yan yana bulunmalı:
+GitHub ana dizininde mutlaka bulunmalı:
 - index.html
 - style.css
 - script.js
@@ -13,17 +16,14 @@ GitHub ana dizininde mutlaka şunlar yan yana bulunmalı:
 - favicon.png
 - BOBU_Litepaper_v1.0.pdf
 
-Kurulum:
-1. ZIP'i bilgisayarında çıkar.
-2. index.html, style.css ve script.js dahil tüm dosyaları repo ana dizinine yükle.
-3. Mevcut bobu-space.mp4 dosyanı SİLME.
-4. Aynı isimli dosyaların üzerine yaz.
+Yükleme:
+1. ZIP'i çıkar.
+2. Özellikle style.css ve script.js dosyalarını GitHub repo ana dizinine yükle.
+3. Aynı isimli eski dosyaların üzerine yaz.
+4. bobu-space.mp4 dosyasının adının tamamen küçük harfle ve aynı biçimde olduğundan emin ol.
 5. Commit changes yap.
-6. GitHub Actions tamamlanınca siteyi Ctrl+Shift+R ile yenile.
+6. GitHub Actions bitince Ctrl+Shift+R ile sert yenileme yap.
 
-Video özellikleri:
-- Otomatik başlar
-- Sessiz başlar (tarayıcı zorunluluğu)
-- Sürekli döner
-- Sound off/on butonu vardır
-- Video açılamazsa hero-poster.png görünür
+Önemli:
+GitHub dosya adları büyük/küçük harfe duyarlıdır.
+HTML içindeki ad: bobu-space.mp4
