@@ -50,24 +50,3 @@ function moveShip(){
 addEventListener('scroll',moveShip,{passive:true});moveShip();
 
 
-const heroVideo=document.getElementById('heroVideo');
-const soundToggle=document.getElementById('soundToggle');
-
-if(heroVideo){
-  const startHeroVideo=()=>heroVideo.play().catch(()=>{});
-  startHeroVideo();
-  document.addEventListener('visibilitychange',()=>{
-    if(!document.hidden && heroVideo.paused) startHeroVideo();
-  });
-  heroVideo.addEventListener('error',()=>{
-    heroVideo.style.display='none';
-    if(soundToggle) soundToggle.style.display='none';
-  });
-}
-if(heroVideo && soundToggle){
-  soundToggle.addEventListener('click',()=>{
-    heroVideo.muted=!heroVideo.muted;
-    soundToggle.textContent=heroVideo.muted?'Sound off':'Sound on';
-    if(heroVideo.paused) heroVideo.play().catch(()=>{});
-  });
-}
