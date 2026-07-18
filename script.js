@@ -48,3 +48,21 @@ function moveShip(){
   ship.style.left=`calc(${progress*100}% - 18px)`;
 }
 addEventListener('scroll',moveShip,{passive:true});moveShip();
+
+
+const heroVideo=document.getElementById('heroVideo');
+const soundToggle=document.getElementById('soundToggle');
+
+if(heroVideo){
+  heroVideo.play().catch(()=>{});
+  heroVideo.addEventListener('error',()=>{
+    heroVideo.style.display='none';
+  });
+}
+if(heroVideo && soundToggle){
+  soundToggle.addEventListener('click',()=>{
+    heroVideo.muted=!heroVideo.muted;
+    soundToggle.textContent=heroVideo.muted?'Sound off':'Sound on';
+    if(heroVideo.paused) heroVideo.play().catch(()=>{});
+  });
+}

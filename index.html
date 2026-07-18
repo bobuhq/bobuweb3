@@ -51,7 +51,11 @@
 
   <main>
     <section id="home" class="hero">
+      <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-poster.png">
+        <source src="bobu-space.mp4" type="video/mp4">
+      </video>
       <div class="hero-bg"></div>
+      <div class="video-overlay"></div>
       <div class="nebula nebula-a"></div>
       <div class="nebula nebula-b"></div>
       <div class="hero-content reveal">
@@ -71,6 +75,7 @@
       <div class="hero-character reveal">
         <img src="wizard-bobu.png" alt="Wizard Bobu">
       </div>
+      <button id="soundToggle" class="sound-toggle" type="button" aria-label="Toggle video sound">Sound off</button>
       <a href="#mission" class="scroll-hint">SCROLL TO EXPLORE ↓</a>
     </section>
 

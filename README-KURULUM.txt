@@ -1,30 +1,29 @@
-BOBU WEB3 V2 — COMPLETE GITHUB PAGES PACKAGE
+BOBU WEB3 V2 — VIDEO UPDATE
 
-DOSYALARIN TAMAMI ANA DİZİNE YÜKLENECEK:
+Bu güncelleme bobu-space.mp4 dosyasını tam ekran hero arka plan videosu olarak kullanır.
+
+GitHub ana dizininde mutlaka şunlar yan yana bulunmalı:
 - index.html
 - style.css
 - script.js
+- bobu-space.mp4
 - hero-poster.png
 - captain-bobu.png
 - wizard-bobu.png
 - favicon.png
 - BOBU_Litepaper_v1.0.pdf
 
-MEVCUT bobu-space.mp4 DOSYAN:
-Bu tasarım videoya bağlı değildir; böylece video yüklenmese bile site çalışır.
-İstersen bobu-space.mp4 dosyanı ana dizinde bırakabilirsin.
-
-YÜKLEME:
-1. GitHub bobuweb3 reposunu aç.
-2. ZIP'i bilgisayarında çıkar.
-3. ZIP içindeki tüm dosyaları repo ana dizinine yükle.
-4. Aynı isimli eski dosyaların üzerine yaz.
+Kurulum:
+1. ZIP'i bilgisayarında çıkar.
+2. index.html, style.css ve script.js dahil tüm dosyaları repo ana dizinine yükle.
+3. Mevcut bobu-space.mp4 dosyanı SİLME.
+4. Aynı isimli dosyaların üzerine yaz.
 5. Commit changes yap.
-6. GitHub Actions tamamlandıktan sonra:
-   https://bobuhq.github.io/bobuweb3/
-7. Eski sürüm görünürse Ctrl+Shift+R kullan veya gizli sekmede aç.
+6. GitHub Actions tamamlanınca siteyi Ctrl+Shift+R ile yenile.
 
-RESMİ BAĞLANTILAR:
-- X: https://x.com/bobu_hq
-- Telegram: https://t.me/+I0Q01kVMYw41YjA0
-- Instagram: https://www.instagram.com/bobu_solana_coin
+Video özellikleri:
+- Otomatik başlar
+- Sessiz başlar (tarayıcı zorunluluğu)
+- Sürekli döner
+- Sound off/on butonu vardır
+- Video açılamazsa hero-poster.png görünür
