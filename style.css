@@ -202,28 +202,45 @@ button {
   right: 0;
   height: var(--ticker-height);
   overflow: hidden;
-  border-bottom: 1px solid rgba(106, 224, 255, 0.26);
+  border-bottom: 1px solid rgba(88, 225, 255, 0.32);
   background:
     radial-gradient(
-      circle at 15% 50%,
-      rgba(128, 72, 255, 0.2),
+      circle at 12% 50%,
+      rgba(142, 72, 255, 0.24),
       transparent 30%
     ),
     radial-gradient(
-      circle at 82% 50%,
-      rgba(0, 218, 255, 0.14),
+      circle at 84% 50%,
+      rgba(0, 224, 255, 0.17),
       transparent 32%
     ),
     linear-gradient(
       90deg,
-      rgba(7, 5, 18, 0.99),
-      rgba(15, 8, 35, 0.98) 45%,
-      rgba(4, 15, 28, 0.99)
+      rgba(5, 3, 16, 0.99),
+      rgba(17, 7, 38, 0.99) 45%,
+      rgba(3, 17, 30, 0.99)
     );
   box-shadow:
-    0 5px 24px rgba(0, 0, 0, 0.42),
-    0 0 22px rgba(112, 73, 255, 0.13);
-  backdrop-filter: blur(15px);
+    0 7px 28px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(117, 74, 255, 0.17),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+}
+
+.announcement-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0 38%,
+      rgba(255, 255, 255, 0.045) 47%,
+      transparent 56% 100%
+    );
+  animation: tickerShimmer 8s linear infinite;
 }
 
 .announcement-viewport {
@@ -237,29 +254,31 @@ button {
 .announcement-viewport::after {
   content: "";
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
-  width: 90px;
+  width: 88px;
   height: 100%;
   pointer-events: none;
 }
 
 .announcement-viewport::before {
   left: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(7, 5, 18, 1),
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 3, 16, 1),
+      rgba(5, 3, 16, 0)
+    );
 }
 
 .announcement-viewport::after {
   right: 0;
-  background: linear-gradient(
-    270deg,
-    rgba(4, 15, 28, 1),
-    transparent
-  );
+  background:
+    linear-gradient(
+      270deg,
+      rgba(3, 17, 30, 1),
+      rgba(3, 17, 30, 0)
+    );
 }
 
 .announcement-track {
@@ -268,60 +287,105 @@ button {
   height: 100%;
   align-items: center;
   will-change: transform;
-  animation: bobuTicker 38s linear infinite;
+  animation: bobuTicker 43s linear infinite;
 }
 
 .announcement-group {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 18px;
-  padding-right: 18px;
+  gap: 16px;
+  padding-right: 16px;
   white-space: nowrap;
 }
 
-.announcement-item {
+.ticker-pill {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   font-family: "Orbitron", "Inter", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.075em;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
+.ticker-pill i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+  animation: tickerPulse 1.7s ease-in-out infinite;
+}
+
+.ticker-green {
+  color: #67f5b4;
+  text-shadow: 0 0 12px rgba(103, 245, 180, 0.52);
+}
+
+.ticker-purple {
+  color: #ca8cff;
+  text-shadow: 0 0 12px rgba(202, 140, 255, 0.54);
+}
+
+.ticker-blue {
+  color: #7ba8ff;
+  text-shadow: 0 0 12px rgba(123, 168, 255, 0.54);
+}
+
+.ticker-cyan {
+  color: #64efff;
+  text-shadow: 0 0 12px rgba(100, 239, 255, 0.54);
+}
+
+.ticker-gold {
+  color: #ffd86a;
+  text-shadow: 0 0 12px rgba(255, 216, 106, 0.5);
+}
+
 .announcement-separator {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 9px;
+  text-shadow: 0 0 8px rgba(136, 103, 255, 0.52);
+}
+
+.announcement-feature,
+.announcement-launch {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Orbitron", "Inter", sans-serif;
   font-size: 10px;
-  text-shadow: 0 0 8px rgba(136, 103, 255, 0.5);
+  font-weight: 900;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
 }
 
-.announcement-purple {
-  color: #c38cff;
-  text-shadow:
-    0 0 7px rgba(188, 117, 255, 0.72),
-    0 0 18px rgba(122, 75, 255, 0.26);
+.announcement-feature {
+  color: #f5f2ff;
+  background:
+    linear-gradient(
+      90deg,
+      #f6f3ff,
+      #c9a7ff 36%,
+      #68eaff 72%,
+      #f6f3ff
+    );
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tickerGradient 5s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(129, 205, 255, 0.34));
 }
 
-.announcement-blue {
-  color: #77a8ff;
+.announcement-launch {
+  color: #ff9ff3;
   text-shadow:
-    0 0 7px rgba(85, 141, 255, 0.72),
-    0 0 18px rgba(49, 110, 255, 0.26);
-}
-
-.announcement-cyan {
-  color: #64f1ff;
-  text-shadow:
-    0 0 7px rgba(73, 231, 255, 0.74),
-    0 0 18px rgba(33, 206, 255, 0.26);
-}
-
-.announcement-white {
-  color: #f4f3ff;
-  text-shadow:
-    0 0 7px rgba(255, 255, 255, 0.5),
-    0 0 18px rgba(159, 133, 255, 0.22);
+    0 0 8px rgba(255, 159, 243, 0.65),
+    0 0 18px rgba(173, 82, 255, 0.3);
 }
 
 .announcement-bar:hover .announcement-track {
@@ -335,6 +399,35 @@ button {
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes tickerPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.78);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes tickerGradient {
+  to {
+    background-position: 220% center;
+  }
+}
+
+@keyframes tickerShimmer {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(110%);
   }
 }
 
@@ -1027,4 +1120,3 @@ footer strong {
     animation: none;
   }
 }
-
